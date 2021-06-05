@@ -57,8 +57,8 @@ class Generator {
         } else {
             // add sources IDs for efficient(ish) non-repeating
           data.sourceIds = {
-            mobile: numbersInRange(10000000,99999999),
-            tv: numbersInRange(100000,999999),
+            mobile: numbersInRange(10000,99999),
+            tv: numbersInRange(10000,99999),
             online: numbersInRange(10000,99999),
           }
         }
