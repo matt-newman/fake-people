@@ -1,0 +1,307 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Fake person data generator example</title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/img/favicon.svg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="container">
+
+            <header class="block">
+                <h1 class="title">Fake person data generator:</h1>
+            </header>
+
+            <main class="container">
+                <div class="block">
+                    <form class="" action="/api/" method="GET">
+                        <div class="field">
+                            <label class="label" for="results">Sample size:</label>
+                            <input type="number" name="results" min="1" max="5000" value="10" class="input">
+                        </div>
+
+                        <div class="field">
+                          <label class="label">Gender:</label>
+                          
+                          <label class="radio">
+                            <input type="radio" name="gender" value="male" class="radio">
+                            &nbsp;Male
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="gender" value="female" class="radio">
+                            &nbsp;Female
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="gender" value="" class="radio" checked>
+                            &nbsp;Mixed
+                          </label>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="percentage_vip">VIP (%):</label>
+                            <input type="number" name="percentage_vip" min="0" max="100" value="50" class="input">
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Source (as ratio/100):</label>
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <label for="source_mobile" class="control button is-static">Mobile</label>
+                                </div>
+                                <div class="control is-expanded">
+                                    <input type="number" name="source_mobile" min="0" max="100" value="60"
+                                        class="input">
+                                </div>
+                            </div>
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <label for="source_tv" class="control button is-static">TV</label>
+                                </div>
+                                <div class="control is-expanded">
+                                    <input type="number" name="source_tv" min="0" max="100" value="30"
+                                        class="input is-expanded">
+                                </div>
+                            </div>
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <label for="source_online" class="control button is-static">E-Commerce</label>
+                                </div>
+                                <div class="control is-expanded">
+                                    <input type="number" name="source_online" min="0" max="100" value="10"
+                                        class="input is-expanded">
+                                </div>
+                            </div>
+                            <p class="help">e.g: if values are 60/60/30, then it would work out as 40/40/20</p>
+                        </div>
+
+                        <p class="label">Nationalities:</p>
+
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="au" name="nat" checked class="mr-1">
+                                        Australian
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="br" name="nat" checked class="mr-1">
+                                        Brazilian
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="ca" name="nat" checked class="mr-1">
+                                        Canadain
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="ch" name="nat" checked class="mr-1">
+                                        Swiss
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="de" name="nat" checked class="mr-1">
+                                        German
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="dk" name="nat" checked class="mr-1">
+                                        Danish
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="es" name="nat" checked class="mr-1">
+                                        Spanish
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="fi" name="nat" checked class="mr-1">
+                                        Finnish
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="fr" name="nat" checked class="mr-1">
+                                        French
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="gb" name="nat" checked class="mr-1">
+                                        British
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="ie" name="nat" checked class="mr-1">
+                                        Irish
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="ir" name="nat" checked class="mr-1">
+                                        Iranian
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="nl" name="nat" checked class="mr-1">
+                                        Dutch
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="no" name="nat" checked class="mr-1">
+                                        Norwegian
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="nz" name="nat" checked class="mr-1">
+                                        New Zealander
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="tr" name="nat" checked class="mr-1">
+                                        Turkish
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="us" name="nat" checked class="mr-1">
+                                        American
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="label">Exclude fields:</p>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="gender" name="exc" class="mr-1">
+                                        Gender
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="name" name="exc" class="mr-1">
+                                        Name
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="email" name="exc" class="mr-1">
+                                        E-mail
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="dob" name="exc" class="mr-1">
+                                        Date of Birth
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="nat" name="exc" class="mr-1">
+                                        Nationality
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="source" name="exc" class="mr-1">
+                                        Source (mobile/tv/online)
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="isVip" name="exc" class="mr-1">
+                                        VIP status
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="location" name="exc" checked class="mr-1">
+                                        Address
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="registered" name="exc" checked class="mr-1">
+                                        Registration date
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="phone" name="exc" checked class="mr-1">
+                                        Phone number
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="cell" name="exc" checked class="mr-1">
+                                        Mobile number
+                                    </label>
+                                </div>
+                                <div class="field">
+                                    <label class="checkbox">
+                                        <input type="checkbox"  value="id" name="exc" checked class="mr-1">
+                                        Database ID
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- hidden fields -->
+                        <input type="hidden" name="noinfo">
+                        <input type="hidden" name="exc" value="picture">
+                        <input type="hidden" name="exc" value="login">
+
+                        <div class="field is-grouped is-grouped-right">
+                            <div class="control">
+                                <button class="button is-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </section>
+
+</body>
+
+</html>
