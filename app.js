@@ -76,7 +76,7 @@ setInterval(() => {
 }, settings.resetInterval);
 
 function startServer() {
-  server.listen(app.get('port'));
+  server.listen(process.env.PORT || app.get('port'));
   
   server.on('error', error => {
     let bind = app.get('port');
