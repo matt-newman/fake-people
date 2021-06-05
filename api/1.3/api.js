@@ -353,7 +353,7 @@ class Generator {
       source.type = 'online';
     }
     if ( random >= ratio_online && random < ratio_online + ratio_tv ) {
-      source.type = 'tv;'
+      source.type = 'tv'
     }
 
     // need non-repeating random IDs
