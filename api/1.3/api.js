@@ -360,7 +360,7 @@ class Generator {
 
     switch (source.type) {
       case 'tv':
-        source.id = this.datasets.sourceIds.tv.splice(random * this.datasets.sourceIds.tv.length - 1,1)[0];
+        source.id = this.datasets.sourceIds.tv.splice(random * this.datasets.sourceIds.tv.length - 1,1);
         break;
       case 'online':
         source.id = this.datasets.sourceIds.online.splice(random * this.datasets.sourceIds.online.length - 1,1);
