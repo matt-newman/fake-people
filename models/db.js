@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const settings = require('../settings');
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/';
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/fake-users';
 
 module.exports = testEnv => {
   const dbName = settings.db + (testEnv ? '-test' : '');
