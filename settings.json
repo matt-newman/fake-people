@@ -1,5 +1,5 @@
 {
-  "port": ,
+  "port": 3000,
   "db": "",
   "maxResults": 5000,
   "limit": 20000,
