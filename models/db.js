@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const settings = require('../settings');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/';
 
 module.exports = testEnv => {
   const dbName = settings.db + (testEnv ? '-test' : '');
 
-  mongoose.connect('mongodb://localhost/' + dbName, {
+  mongoose.connect(mongoUri + dbName, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

@@ -1,6 +1,6 @@
 {
-  "name": "randomuser.me-node",
-  "version": "0.1.3",
+  "name": "fake-users",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node --expose-gc app",

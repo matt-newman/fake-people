@@ -1,6 +1,6 @@
 {
   "port": 3000,
-  "db": "randomuser",
+  "db": "fakeusers",
   "maxResults": 5000,
   "limit": 20000,
   "resetInterval": 300000,
