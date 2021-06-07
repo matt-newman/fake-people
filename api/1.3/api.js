@@ -57,9 +57,9 @@ class Generator {
         } else {
             // add sources IDs for efficient(ish) non-repeating
           data.sourceIds = {
-            mobile: numbersInRange(10000,99999),
-            tv: numbersInRange(10000,99999),
-            online: numbersInRange(10000,99999),
+            mobile: [],
+            tv: [],
+            online: [],
           }
         }
 
@@ -336,6 +336,8 @@ class Generator {
   }
 
   randomSource( { mobile, tv, online } = { mobile: 60, tv: 30, online: 10 } ) {
+    let newId = 12345678;
+    let unique = false;
     let source = { 
       type: 'mobile',
       id: '12345678'
@@ -347,8 +349,6 @@ class Generator {
     let ratio_online = online / total;
     let random = Math.random();
 
-    // console.log( 'RANDOM', { total, ratio_tv, ratio_online, random } );
-
     if ( random < ratio_online ) {
       source.type = 'online';
     }
@@ -356,21 +356,38 @@ class Generator {
       source.type = 'tv'
     }
 
-    // need non-repeating random IDs
+    // console.log( 'RANDOM', { total, ratio_tv, ratio_online, random, source } );
 
-    switch (source.type) {
-      case 'tv':
-        source.id = this.datasets.sourceIds.tv.splice(random * this.datasets.sourceIds.tv.length - 1,1);
-        break;
-      case 'online':
-        source.id = this.datasets.sourceIds.online.splice(random * this.datasets.sourceIds.online.length - 1,1);
-        break;
-      default: // mobile
-        source.id = this.datasets.sourceIds.mobile.splice(random * this.datasets.sourceIds.mobile.length - 1,1);
-        break;
+    // need non-repeating random IDs
+    while ( unique === false ) {
+      switch (source.type) {
+        case 'tv':
+          newId = parseInt(random * Math.pow(10,6), 10);
+          unique = this.datasets.sourceIds.tv.indexOf(newId) === -1;
+          if (unique) {
+            this.datasets.sourceIds.tv.push(newId);
+          }
+          break;
+        case 'online':
+          newId = parseInt(random * Math.pow(10,5), 10);
+          unique = this.datasets.sourceIds.online.indexOf(newId) === -1;
+          if (unique) {
+            this.datasets.sourceIds.online.push(newId);
+          }
+          break;
+        default: // mobile
+          newId = parseInt(random * Math.pow(10,8), 10);
+          unique = this.datasets.sourceIds.mobile.indexOf(newId) === -1;
+          if (unique) {
+            this.datasets.sourceIds.mobile.push(newId);
+          }
+          break;
+      }
+
+      random = Math.random();
     }
 
-    source.id = source.id[0];
+    source.id = newId;
 
     return source;
   }
