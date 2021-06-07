@@ -198,7 +198,7 @@ class Generator {
         let dobDate = new Date(dob);
 
         this.current.dob = {
-          date: dobDate.toISOString(),
+          date: dobDate.toISOString().split('T')[0],
           age: new Date().getFullYear() - dobDate.getFullYear()
         };
         let reg = range(1016688461000, this.constantTime * 1000);
